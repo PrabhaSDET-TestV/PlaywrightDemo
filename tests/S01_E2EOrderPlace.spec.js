@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
-
+import { login } from "../pages/login.js"
 test(`S01_E2EOrderPlace`, async ({ page }) => {
   await page.goto(process.env.URL);
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  await login(page, process.env.USERNAME, process.env.PASSWORD);
 });
