@@ -13,6 +13,5 @@ test(`S01_E2EOrderPlace`, {tag: '@e2e'}, async ({ page }) => {
   await inventory.addToCart(`Sauce Labs Backpack`);
   await inventory.verifyCartCount("1");
   await inventory.clickCartIcon();
-
   await page.waitForTimeout(2000);
 });

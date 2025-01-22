@@ -8,7 +8,7 @@ class Login {
 
   async goto(){
     await this.page.goto(`https://www.saucedemo.com/`);
-    console.log(`${await this.currentPageTitle()} page is shown.`)
+    // console.log(`${await this.currentPageTitle()} page is shown.`);
   }
 
   // Function to enter the username
@@ -39,4 +39,4 @@ class Login {
 }
 
 // Export the class so it can be imported in other files
-module.exports = {Login}
+module.exports = {Login};
