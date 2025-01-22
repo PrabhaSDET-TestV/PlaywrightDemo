@@ -6,9 +6,9 @@ class Login {
     this.loginButton = '#login-button';
   }
 
+  // Function to load the URL
   async goto(){
     await this.page.goto(`https://www.saucedemo.com/`);
-    // console.log(`${await this.currentPageTitle()} page is shown.`);
   }
 
   // Function to enter the username
