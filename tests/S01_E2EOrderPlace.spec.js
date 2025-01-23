@@ -25,7 +25,7 @@ test(`S01_E2EOrderPlace`, {tag: '@e2e'}, async ({ page }) => {
   await checkoutStepOne.fillFirstName(`Prabhakaran`);
   await checkoutStepOne.fillLastName(`Ravi`);
   await checkoutStepOne.fillPostalCode(`560043`);
-  await checkoutStepOne.clickCheckout();
+  await checkoutStepOne.clickContinue();
 
   const checkoutStepTwo = new CheckoutStepTwo(page);
   await checkoutStepTwo.clickFinish();

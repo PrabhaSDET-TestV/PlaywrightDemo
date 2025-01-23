@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "e2e": "npx playwright test --grep @e2e"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,6 +13,7 @@
     "@eslint/js": "^9.18.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.7",
+    "allure-playwright": "^3.0.9",
     "eslint": "^9.18.0",
     "eslint-plugin-playwright": "^2.1.0",
     "globals": "^15.14.0"
