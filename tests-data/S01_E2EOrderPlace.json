@@ -1,0 +1,20 @@
+[
+    {
+        "username": "standard_user",
+        "password": "secret_sauce",
+        "product": "Sauce Labs Backpack",
+        "inventoryPageTitle": "Swag Labs",
+        "firstName": "Prabhakaran",
+        "lastName": "R",
+        "postalCode": "560043"
+    },
+    {
+        "username": "standard_user",
+        "password": "secret_sauce",
+        "product": "Sauce Labs Bike Light",
+        "inventoryPageTitle": "Swag Labs",
+        "firstName": "John",
+        "lastName": "M",
+        "postalCode": "600016"
+    }
+]

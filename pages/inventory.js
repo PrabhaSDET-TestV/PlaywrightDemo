@@ -24,7 +24,7 @@ class Inventory {
     async verifyCartCount(expectedCount) {
         const countText = await this.page.locator(this.cartCountSelector);
         await expect(countText).toHaveText(expectedCount);
-        console.log(`Added counts are matched.`)
+        console.log(`Added counts are matched.`);
     }
 
   }
