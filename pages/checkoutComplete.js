@@ -1,3 +1,4 @@
+import { expect } from '@playwright/test';
 class CheckoutComplete {
     constructor(page) {
         this.page = page;
