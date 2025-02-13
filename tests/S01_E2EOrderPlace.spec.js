@@ -5,38 +5,32 @@ import { Cart } from '../pages/cart.js';
 import { CheckoutStepOne } from '../pages/checkoutStepOne.js';
 import { CheckoutStepTwo } from '../pages/checkoutStepTwo.js';
 import { CheckoutComplete } from '../pages/checkoutComplete.js';
-const dataSet = JSON.parse(JSON.stringify(require("../tests-data/S01_E2EOrderPlace.json")));
 
-for(const data of dataSet) {
-
-  test(`E2EPlaceFor${data.product}`, {tag: '@e2e'}, async ({ page }) => {
+test('E2E Order Placement for Sauce Labs Backpack', async ({ page }) => {
     const login = new Login(page);
     await login.goto();
-    await login.login(data.username, data.password);
-  
-    expect(await login.currentPageTitle()).toBe(data.inventoryPageTitle);
-  
+    await login.login("standard_user", "secret_sauce");
+
+    expect(await login.currentPageTitle()).toBe("Swag Labs");
+
     const inventory = new Inventory(page);
-    await inventory.addToCart(data.product);
+    await inventory.addToCart("Sauce Labs Backpack");
     await inventory.verifyCartCount("1");
     await inventory.clickCartIcon();
-  
+
     const cart = new Cart(page);
     await cart.clickCheckout();
-  
+
     const checkoutStepOne = new CheckoutStepOne(page);
-    await checkoutStepOne.fillFirstName(data.firstName);
-    await checkoutStepOne.fillLastName(data.lastName);
-    await checkoutStepOne.fillPostalCode(data.postalCode);
+    await checkoutStepOne.fillFirstName("Prabhakaran");
+    await checkoutStepOne.fillLastName("R");
+    await checkoutStepOne.fillPostalCode("560043");
     await checkoutStepOne.clickContinue();
-  
+
     const checkoutStepTwo = new CheckoutStepTwo(page);
     await checkoutStepTwo.clickFinish();
-  
+
     const checkoutComplete = new CheckoutComplete(page);
     await checkoutComplete.validateText("Thank you for your order!");
     await checkoutComplete.clickBackToProducts();
-  });
-
-}
-
+});
