@@ -6,11 +6,10 @@ test('API 1: Get All Products List', async ({ page, request }) => {
   
   await page.goto("https://automationexercise.com/");
   await apiPage.clickAPITesting();
-  await apiPage.clickAPI_1(); // Expand the API details section
+  await apiPage.clickAPI_1();
   
   const apiInfo = await apiPage.captureAPIInfo(0);
   console.log("Extracted API Info:", apiInfo);
-
   
   let response = await request.get(apiInfo.url);
   // Validate Response
